@@ -4,7 +4,7 @@
   <groupId>com.rohit</groupId>
   <artifactId>sample-java-project</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>sample-java-project</name>
   <url>http://maven.apache.org</url>
   <properties>
