@@ -17,10 +17,12 @@ pipeline{
             }
         }
         stage("Push Docker Image"){
-            withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-                sh "docker login -u rohit34zinzuvadia -p ${dockerHubPwd}"
+            steps{
+                withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+                    sh "docker login -u rohit34zinzuvadia -p ${dockerHubPwd}"
+                }
+                sh 'docker push rohit34zinzuvadia/sample-java-app:1.0'
             }
-            sh 'docker push rohit34zinzuvadia/sample-java-app:1.0'
         }
     }
 }
