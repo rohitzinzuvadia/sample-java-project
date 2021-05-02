@@ -16,5 +16,11 @@ pipeline{
                 sh 'docker build -t rohit34zinzuvadia/sample-java-app:1.0 .'
             }
         }
+        stage("Push Docker Image"){
+            withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+                sh "docker login -u rohit34zinzuvadia -p ${dockerHubPwd}"
+            }
+            sh 'docker push rohit34zinzuvadia/sample-java-app:1.0'
+        }
     }
 }
