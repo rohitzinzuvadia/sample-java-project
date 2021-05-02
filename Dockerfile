@@ -2,7 +2,7 @@ FROM openjdk:8-jre-alpine
 
 RUN mkdir -p /app/bin
 
-COPY sample-java-project-1.0.jar /app/bin
+COPY target/sample-java-project-1.0.jar /app/bin
 
 WORKDIR /app/bin
 
